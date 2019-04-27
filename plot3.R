@@ -33,7 +33,7 @@ cleanData<-function(){
 
 plot3png<-function(){
   #exports the plot
-  png("plot3.png")
+  png("plot3.png", width=480, height=480)
   plot(x=mydata$datetime, y=mydata$Sub_metering_1, type = "n", ylab="Enegry sub meeting", xlab="")
   points(x=mydata$datetime, y=mydata$Sub_metering_1, type = "l")
   points(x=mydata$datetime, y=mydata$Sub_metering_2, type = "l", col = "Red")

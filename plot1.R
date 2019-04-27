@@ -28,7 +28,7 @@ cleanData<-function(){
 
 plot1png<-function(){
   #exports the plot
-  png("plot1.png")
+  png("plot1.png", width=480, height=480)
   hist(returnData()$Global_active_power, col="Red", xlab="Global Active Power (kilowatts)", main="Global Active Power" )
   dev.off()
 }

@@ -33,7 +33,7 @@ cleanData<-function(){
 
 plot2png<-function(){
   #exports the plot
-  png("plot2.png")
+  png("plot2.png", width=480, height=480)
   plot(x=mydata$datetime, y=mydata$Global_active_power, type = "l", ylab="Global Active Power (kilowatts)", xlab="")
   dev.off()
 }
