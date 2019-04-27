@@ -1,4 +1,4 @@
-#code for plot 2
+#code for plot 3
 #***Before submission, add descriptoins, and remove # from return data so it works
 mySetup<-function(){
   #loads the librarys used.
@@ -33,8 +33,12 @@ cleanData<-function(){
 
 plot2png<-function(){
   #exports the plot
-  png("plot2.png")
-  plot(x=mydata$datetime, y=mydata$Global_active_power, type = "l", ylab="Global Active Power (kilowatts)", xlab="")
+  png("plot3.png")
+  plot(x=mydata$datetime, y=mydata$Sub_metering_1, type = "n", ylab="Enegry sub meeting", xlab="")
+  points(x=mydata$datetime, y=mydata$Sub_metering_1, type = "l")
+  points(x=mydata$datetime, y=mydata$Sub_metering_2, type = "l", col = "Red")
+  points(x=mydata$datetime, y=mydata$Sub_metering_3, type = "l", col = "Blue")
+  legend("topright", col=c("Black", "Red", "Blue"),legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1)
   dev.off()
 }
 
@@ -44,8 +48,8 @@ returnData<-function(){
 }
 
 #calls the functions to do the work.
-mySetup()
-dlFile()
+#mySetup()
+#dlFile()
 loadFile()
 cleanData()
 plot2png()
